@@ -29,19 +29,7 @@
         <plugins>
             <!-- we want JDK 1.6 source and binary compatiblility -->
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
-            </plugin>
-            <!-- ... -->
-            <!-- we want sources to be processed by a specific 1.6 javac -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
+                <artifactId/>
                 <configuration>
                     <verbose>true</verbose>
                     <fork>true</fork>
