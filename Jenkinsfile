@@ -5,15 +5,15 @@ pipeline {
             steps {
                 bat "D:"
                 bat "cd D:\\IT Carlow\\Year4\\Soft Eng\\jenkins\\Student-jenkins"
-                bat 'call mvn clean'
-                bat 'call mvn compile'
+                call 'mvn clean'
+                call 'mvn compile'
             }
         }
 	stage('Test') {
 	steps {
 	    bat "D:"
         bat "cd D:\\IT Carlow\\Year4\\Soft Eng\\jenkins\\Student-jenkins"
-		bat 'call mvn test'
+		call 'call mvn test'
 		}
 }
 
