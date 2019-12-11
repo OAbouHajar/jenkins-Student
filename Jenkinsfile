@@ -8,15 +8,12 @@ pipeline {
         }
         stage('Compile') {
             steps {
-                echo "build Data"
-                bat 'mvn compile'
+                bat 'mvn -B -DskipTests clean package'
 	            }
         }
             stage('Test') {
               steps {
-                echo "Test Data "
                 bat 'mvn test'
-                //sh 'java -cp "all\\junit-4.13.jar";"all\\hamcrest-core-1.3.jar";. org.junit.runner.JUnitCore "src\\studentTest"'
               }
             }
 
