@@ -5,29 +5,16 @@ pipeline
     {
         stage('Fetch')
         {
-            steps
-            {
-                    echo "git fetch origin"
-            }
+            echo "git fetch origin"
         }
         stage('Compile')
         {
-        docker.image('node:7-alpine').inside
-            {
-                steps {
-                    bat 'mvn -B -DskipTests clean package'
-                    }
-            }
+            bat 'mvn -B -DskipTests clean package'
         }
-            stage('Test')
-            {
-         docker.image('node:7-alpine').inside
-                {
-                  steps {
-                    bat 'mvn test'
-                        }
-                }
-            }
+        stage('Test')
+        {
+            bat 'mvn test'
+        }
     }
 }
 
