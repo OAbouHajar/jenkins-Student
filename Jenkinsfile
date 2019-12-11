@@ -3,13 +3,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                call '/user:administrator mvn clean'
-                call '/user:administrator mvn compile'
+                call "D:"
+                call "cd D:\\IT Carlow\\Year4\\Soft Eng\\jenkins\\Student-jenkins"
+                call 'mvn clean'
+                call 'mvn compile'
             }
         }
 	stage('Test') {
 	steps {
-		call '/user:administrator mvn test'
+	    call "D:"
+        call "cd D:\\IT Carlow\\Year4\\Soft Eng\\jenkins\\Student-jenkins"
+		call 'mvn test'
 		}
 }
 
