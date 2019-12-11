@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-    stage('Build') {
+    stage('Fetch') {
                 steps {
                     echo "fetch data from orgin"
                 }
