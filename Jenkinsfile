@@ -1,22 +1,33 @@
-pipeline {
+pipeline
+{
     agent none
-    stages {
-        stage('Fetch') {
-            steps {
+    stages
+    {
+        stage('Fetch')
+        {
+            steps
+            {
                     echo "git fetch origin"
             }
         }
-        stage('Compile') {
-            steps {
-                bat 'mvn -B -DskipTests clean package'
-	            }
-        }
-            stage('Test') {
-              steps {
-                bat 'mvn test'
-              }
+        stage('Compile')
+        {
+        docker.image('node:7-alpine').inside
+            {
+                steps {
+                    bat 'mvn -B -DskipTests clean package'
+                    }
             }
-
+        }
+            stage('Test')
+            {
+         docker.image('node:7-alpine').inside
+                {
+                  steps {
+                    bat 'mvn test'
+                        }
+                }
+            }
     }
 }
 
