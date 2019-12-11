@@ -3,13 +3,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                call 'mvn clean'
-                call 'mvn compile'
+                call '/user:administrator mvn clean'
+                call '/user:administrator mvn compile'
             }
         }
 	stage('Test') {
 	steps {
-		call 'call mvn test'
+		call '/user:administrator mvn test'
 		}
 }
 
