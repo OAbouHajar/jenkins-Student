@@ -8,7 +8,7 @@ pipeline {
         }
 	stage('Test') {
 	steps {
-                bat 'mvn test -f "D:\\IT Carlow\\Year4\\Soft Eng\\jenkins\\Student-jenkins\\pom.xml"'
+                bat 'mvn test -f'
 		}
 }
 
