@@ -1,21 +1,12 @@
-pipeline {
+pipeline
+{
     agent any
     stages {
-    stage('Fetch') {
-                steps {
-                    echo "fetch data from orgin"
-                }
-            }
-        stage('Build') {
+        stage('Fetch') {
             steps {
-                bat 'mvn clean -f "D:\\IT Carlow\\Year4\\Soft Eng\\jenkins\\Student-jenkins\\pom.xml"'
+                echo "fetch data from orgin"
             }
         }
-	stage('Test') {
-	steps {
-                bat 'mvn package -f "D:\\IT Carlow\\Year4\\Soft Eng\\jenkins\\Student-jenkins\\pom.xml"'
-		}
-}
-
+        
     }
 }
