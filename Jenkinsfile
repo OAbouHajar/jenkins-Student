@@ -9,13 +9,13 @@ pipeline {
         stage('Compile') {
             steps {
                 echo "build Data"
-                sh 'mvn compile'
+                bat 'mvn compile'
 	            }
         }
             stage('Test') {
               steps {
                 echo "Test Data "
-                sh 'mvn test'
+                bat 'mvn test'
                 //sh 'java -cp "all\\junit-4.13.jar";"all\\hamcrest-core-1.3.jar";. org.junit.runner.JUnitCore "src\\studentTest"'
               }
             }
