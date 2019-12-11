@@ -12,6 +12,10 @@ pipeline
                 bat 'mvn clean -f "D:\\IT Carlow\\Year4\\Soft Eng\\jenkins\\Student-jenkins\\pom.xml"'
             }
         }
-        
+        stage('Test') {
+            steps {
+                bat 'mvn package -f "D:\\IT Carlow\\Year4\\Soft Eng\\jenkins\\Student-jenkins\\pom.xml"'
+            }
+        }
     }
 }
